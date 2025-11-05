@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - STUTI MAHESH</title>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <style>
+        :root {
+            --color-primary: #1A237E; /* Deep Indigo - Headers/Nav BG */
+            --color-accent: #007A8A; /* Deep Teal - Borders/Highlights */
+            --color-highlight: #FFC107; /* Amber/Gold - Active State */
+            --color-background: #F4F7F9; /* Light Gray/Blue */
+            --color-text: #333333;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--color-primary);
+            padding: 15px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: center;
+            gap: 10px;
+            padding: 0 10px;
+        }
+        .nav-link {
+            color: #C5CAE9; 
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .nav-link:hover {
+            background-color: #3F51B5; 
+            color: white;
+            transform: translateY(-2px);
+        }
+        .active-link {
+            background-color: var(--color-accent) !important; 
+            color: white !important;
+            border-bottom: 3px solid var(--color-highlight);
+        }
+        main {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .content-section {
+            background-color: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+            border-top: 6px solid var(--color-accent);
+            display: none; 
+        }
+        h1 {
+            text-align:center;
+            color: var(--color-primary);
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--color-highlight);
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: var(--color-primary);
+            font-size: 2em;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        h3 {
+            color: var(--color-accent);
+            font-size: 1.6em;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .card {
+            background-color: #EEF3F6;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 6px solid var(--color-accent);
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #DDD;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        .profile-container {
+            margin-top:5%;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        .profile-photo {
+            width: 400px;
+            height: 360px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--color-highlight);
+            box-shadow: 0 0 15px rgba(0, 122, 138, 0.5);
+        }
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.1em;
+            padding: 10px 0;
+        }
+        .contact-detail span {
+            font-weight: 600;
+            color: var(--color-accent);
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5em; }
+            h2 { font-size: 1.8em; }
+            .nav-container {
+                flex-direction: column;
+                gap: 5px;
+            }
+            .nav-link {
+                width: 100%;
+                text-align: center;
+            }
+            .content-section {
+                padding: 20px;
+            }
+            .profile-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="#home" data-section="home-section" class="nav-link active-link">My Portfolio</a>
+            <a href="#projects" data-section="projects-section" class="nav-link">Projects</a>
+            <a href="#achievements" data-section="achievements-section" class="nav-link">Achievements</a>
+            <a href="#resume" data-section="resume-section" class="nav-link">Resume</a>
+            <a href="#biodata" data-section="biodata-section" class="nav-link">Bio-data</a>
+            <a href="#contact" data-section="contact-section" class="nav-link">Contact Me</a>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- 1. HOME (PORTFOLIO) -->
+        <section id="home-section" class="content-section" style="display: block;">
+            <h1><span style="font-size:1em;">Hey There! I'm </span>STUTI MAHESH</h1>
+            <div class="profile-container">
+                <img 
+                    src="myProfile.jpg" 
+                    alt="My profile picture" 
+                    class="profile-photo"
+                >
+                <div>
+                    <h2>Passionate CSE Student<br>
+                        at Bangalore Institute of Technology</h2>
+                    <p style="color: var(--color-accent); font-size: 1.5em; font-weight: 500;">Consistent Top Rank Holder in B.E. – CSE<br>Driven by curiosity and innovation, 
+                        I aim to build impactful solutions through technology.</p>
+                </div>
+            </div>
+            
+            <h3>About Me</h3>
+            <p style="font-size: 1.1em; color: #555;">
+                I am a 3rd-year Computer Science Engineering student at Bangalore Institute of Technology.
+                With a CGPA of 9.6, I have secured top ranks for two consecutive years.<br>
+                I enjoy exploring programming, web development, and problem-solving through creative projects.
+                Apart from academics, I’m passionate about sports, art, and continuous self-growth.
+            </p>
+        </section>
+
+        <!-- 2. PROJECTS SECTION -->
+        <section id="projects-section" class="content-section">
+            <h2>Key Projects</h2>
+            <p>A selection of projects demonstrating technical expertise and innovation.</p>
+
+            <div class="card">
+                <h3>Local-Fix</h3>
+                <p style="color: var(--color-accent);">tech Stack: Python (Flask), OracleDB, HTML5, CSS3, Jinja2, Bootstrap</p>
+                <p>LocalFix is a web application that helps users search, view, and review local service 
+                    providers like plumbers and electricians. It features a dynamic provider listing, 
+                    filter/sort functionality, detailed profiles, and a review submission system. 
+                    This full-stack application integrates a Flask backend with Oracle Database for persistent 
+                    data handling and HTML/CSS for responsive frontend UI.</p>
+            </div>
+            
+            <div class="card">
+                <h3>Rock-Paper-Scissors</h3>
+                <p style="color: var(--color-accent);">Developed using: HTML5, CSS3, Javascript</p>
+                <p>This is a Rock Paper Scissors game built with basic web technologies. 
+                    It allows the user to play against the computer using intuitive graphical buttons. 
+                    The game keeps track of scores, displays results dynamically, 
+                    and offers a light/dark mode toggle for improved user experience.</p>
+            </div>
+
+            <div class="card">
+                <h3>Amazon Clone Website</h3>
+                <p style="color: var(--color-accent);">Language used: HTML5 ,CSS3</p>
+                <p>A responsive clone of the Amazon homepage created using only HTML and CSS. 
+                    This project replicates the core layout and visual design of the original 
+                    Amazon website to practice frontend development skills and UI/UX structuring.</p>
+            </div>
+        </section>
+
+        <!-- 3. ACHIEVEMENTS SECTION -->
+        <section id="achievements-section" class="content-section">
+            <h2>Awards & Recognition</h2>
+            <p>Highlighting Achievements and Milestones.</p>
+
+            <div class="card">
+                <h3>GM Group’s STATE LEVEL BADMINTON TOURNAMENT - 2019</h3>
+                <p>Secured 1st place in the GM Group’s State Level Badminton Tournament 2019 
+                in the U-15 Singles category, showcasing excellence and competitive spirit.</p>
+            </div>
+
+            <div class="card">
+                <h3>Leap-Start Intra-State Badminton Championship - 2018</h3>
+                <p>Achieved runner-up position in the Leap-Start Intra-State Badminton Championship 2018, 
+                    demonstrating consistent performance and dedication.</p>
+            </div>
+
+            <div class="card">
+                <h3>Individual Championship in Sports - 2018-19</h3>
+                <p>Secured the Individual Championship title in sports for the academic year 2018-19 at school, 
+                    recognizing outstanding all-round athletic achievement.</p>
+            </div>
+
+            <div class="card">
+                <h3>Most Talented Student Award</h3>
+                <p>Awarded the title of “Most Talented Student” twice for exceptional performance across academics, sports, and cultural activities.</p>
+            </div>
+
+            <div class="card">
+                <h3>Academic Excellence Award - 2018</h3>
+                <p>Honored with the Academic Excellence Award in 2018 for achieving top academic results and consistent performance.</p>
+            </div>
+
+            <div class="card">
+                <h3>Unique Talent and Inter-College Fest</h3>
+                <p>Secured 1st place in the Unique Talent competition (2017) and in the Inter-College Fest (2023), showcasing creativity and versatility.</p>
+            </div>
+
+            <div class="card">
+                <h3>NCC Leadership - 1KAR Girls Battalion</h3>
+                <p>Earned the NCC-A Certificate as Senior Leader of the 1KAR Girls Battalion, 
+                    demonstrating discipline, leadership, and responsibility.</p>
+            </div>
+
+            <div class="card">
+                <h3>Yogabhyasa Praveena - 2019</h3>
+                <p>Awarded the title of “Yogabhyasa Praveena” in 2019 for excellence and dedication in the practice of yoga.</p>
+            </div>
+
+            <div class="card">
+                <h3>Karnatic Music Junior Exam</h3>
+                <p>Achieved 1st class in the Karnatic Music Junior Exam, highlighting musical skill and commitment to classical art forms.</p>
+            </div>
+
+            <div class="card">
+                <h3>Track and Field Achievements</h3>
+                <p>Secured 1st place in 1500m, 800m, and 400m track events for three consecutive years at school, 
+                    showcasing endurance and consistency in athletics.</p>
+            </div>
+
+            <div class="card">
+                <h3>Annual School Sports Meet</h3>
+                <p>Won 1st and 2nd places in Long Jump and Shot Put respectively at the Annual School Meets (2016 & 2018), 
+                    and 2nd place in High Jump (2018).</p>
+            </div>
+
+            <div class="card">
+                <h3>Team Sports Achievements</h3>
+                <p>Secured 1st place in Intra-School Throwball (2015, 2016, 2018, 2019) 
+                    and Kabaddi (2016, 2017) tournaments, displaying teamwork and athletic excellence.</p>
+            </div>
+
+        </section>
+
+        <!-- 4. RESUME SECTION -->
+        <section id="resume-section" class="content-section">
+            <h2>Resume</h2>
+            
+            <h3>Certifications</h3>
+            <div class="card">
+                <ul>
+                    <li>•   Infosys Spring Board- Data Structures and Algorithms using Java</li>
+                    <li>•   Infosys Spring Board- Software Engineering</li>
+                    <li>•   Scaler Topics- Python course: Mastering Essentials</li>
+                    <li>•   AWS community builders- HTML, CSS course</li>
+                    <li>•	POSTMAN- API Fundamentals Student Expert</li>
+                    <li>•	AMAZON CLONE PROJECT</li>
+                </ul>
+            </div>
+            
+            <h3>Education</h3>
+            <div class="card">
+                <h4>Bangalore Institute of Technology, V.V. Puram, Bangalore, Karnataka (2023 – Present)</h4>
+                <p style="color: var(--color-accent); font-style: italic;">B.E. in Computer Science and Engineering</p>
+            </div>
+
+            <div class="card">
+                <h4>Vidya Mandir PU College (2021 – 2023)</h4>
+                <p style="color: var(--color-accent); font-style: italic;">PU College</p>
+                <p>Scored 98% in PUC Board Examinations</p>
+            </div>
+
+            <div class="card">
+                <h4>Carmel High School (2007 – 2021)</h4>
+                <p style="color: var(--color-accent); font-style: italic;">School</p>
+                <p>Achieved 97% in 10th ICSE Board Examinations</p>
+            </div>
+
+
+            <h3>Technical Skills</h3>
+            <div class="card">
+                <ul>
+                    <li>•   Python, C programing</li>
+                    <li>•   Basics of Java and C++</li>
+                    <li>•   DBMS basics-SQL and NoSQL(Mongo db)</li>
+                    <li>•   OOPS (Python)</li>
+                    <li>•   HTML, CSS and JavaScript</li>
+                    <li>•   Postman API</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 5. BIO-DATA SECTION -->
+        <section id="biodata-section" class="content-section">
+            <h2>Personal Bio-data</h2>
+            
+            <div class="card">
+                <h3>Personal Information</h3>
+                <p><strong>Full Name:</strong> Stuti Mahesh</p>
+                <p><strong>Date of Birth:</strong> Dec 05, 2004</p>
+                <p><strong>Gender:</strong> Female</p>
+                <p><strong>Nationality:</strong> Bharat</p>
+                <p><strong>Religion:</strong> Hindu</p>
+                <p><strong>Languages:</strong> English,Kannada,Hindi</p>
+            </div>
+
+            <div class="card">
+                <h3>Family Background</h3>
+                <p><strong>Father's Name:</strong> Mahesh L</p>
+                <p><strong>Mother's Name:</strong> Sunitha Mahesh</p>
+            </div>
+
+            <p style="margin-top: 30px; font-style: italic; color: #555;">
+                Declaration: I certify that the above information is true and correct to the best of my knowledge.
+            </p>
+        </section>
+
+        <!-- 6. CONTACT ME SECTION -->
+        <section id="contact-section" class="content-section">
+            <h2>Get in Touch</h2>
+            <p>I am always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+            
+            <div style="background-color: var(--color-background); padding: 30px; border-radius: 10px;">
+                <div class="contact-detail">
+                    <span style="font-size: 1.5em;">&#9993;</span> <!-- Mail icon -->
+                    <strong>Email:</strong> <a href="stutimahesh6@gmail.com" style="color: var(--color-primary); text-decoration: none;">stutimahesh6@gmail.com</a>
+                </div>
+
+                <div class="contact-detail">
+                    <span style="font-size: 1.5em;">&#128222;</span> <!-- Phone icon -->
+                    <strong>Phone:</strong> +91 7892844348
+                </div>
+
+                <div class="contact-detail">
+                    <span style="font-size: 1.5em;">&#128187;</span> <!-- LinkedIn icon -->
+                    <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/stutimahesh" target="_blank" style="color: var(--color-primary); text-decoration: none;">/in/stutimahesh</a>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 40px;">Send a Message</h3>
+            <form action="#" style="max-width: 500px;">
+                <div style="margin-bottom: 15px;">
+                    <label for="name" style="display: block; margin-bottom: 5px;">Name:</label>
+                    <input type="text" id="name" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label for="email" style="display: block; margin-bottom: 5px;">Email:</label>
+                    <input type="email" id="email" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label for="message" style="display: block; margin-bottom: 5px;">Message:</label>
+                    <textarea id="message" rows="4" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+                </div>
+                <button type="submit" style="background-color: var(--color-accent); color: white; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-size: 1em; transition: background-color 0.3s;">
+                    Send Inquiry
+                </button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer style="background-color: var(--color-primary); color: white; text-align: center; padding: 20px 0; margin-top: 50px;">
+        <p>&copy; 2025 Stuti Mahesh Portfolio.</p>
+    </footer>
+
+    <!-- JAVASCRIPT & JQUERY FOR NAVIGATION LOGIC -->
+    <script>
+        $(document).ready(function() {
+            // section switching
+            function switchSection(targetId) {
+                // Fade out all current content sections smoothly
+                //use 500ms (half a second) for a gentle transition.
+                $('.content-section').fadeOut(500); 
+                
+                //Fade in the target section
+                // use a small delay (200ms) after the fadeOut starts, but jQuery handles overlapping effects well.
+                $('#' + targetId).fadeIn(500);
+
+                //Update active navigation link
+                $('.nav-link').removeClass('active-link');
+                $(`[data-section="${targetId}"]`).addClass('active-link');
+            }
+
+            // Event listener for navigation links
+            $('.nav-link').on('click', function(e) {
+                e.preventDefault();
+                const targetId = $(this).data('section');
+                
+                window.location.hash = $(this).attr('href').substring(1);
+                
+                switchSection(targetId);
+            });
+
+            const initialHash = window.location.hash.substring(1);
+            let defaultSection = 'home-section'; 
+
+            if (initialHash) {
+                const targetSection = initialHash + '-section';
+                if ($('#' + targetSection).length) {
+                    defaultSection = targetSection;
+                }
+            }
+            
+            $('.content-section').hide(); 
+            $('#' + defaultSection).show(); 
+            $('.nav-link').removeClass('active-link');
+            $(`[data-section="${defaultSection}"]`).addClass('active-link');
+        });
+    </script>
+
+</body>
+</html>
