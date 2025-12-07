@@ -3,12 +3,13 @@
 A fully responsive, interactive, and visually appealing personal portfolio website built using HTML, CSS, and JavaScript (with jQuery).
 This website showcases my projects, achievements, resume, bio-data, and contact information, all in a smooth single-page navigation layout.
 
-##🚀Features
-###✅ Responsive Design
+##Features
+
+###Responsive Design
 
 Works seamlessly on desktops, tablets, and smartphones.
 
-###✅ Smooth Navigation (Single Page Scroll)
+###Smooth Navigation (Single Page Scroll)
 
 Sections fade in/out using jQuery for a polished user experience.
 
