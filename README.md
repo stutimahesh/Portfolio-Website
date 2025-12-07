@@ -3,6 +3,9 @@
 A fully responsive, interactive, and visually appealing personal portfolio website built using HTML, CSS, and JavaScript (with jQuery).
 This website showcases my projects, achievements, resume, bio-data, and contact information, all in a smooth single-page navigation layout.
 
+## 🌐 Live Portfolio Website  
+https://stutimahesh.github.io/Portfolio-Website/
+
 ## 🚀 Features
 
 ### ✅ Responsive Design
